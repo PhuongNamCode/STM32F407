@@ -1,0 +1,16 @@
+20:45:52 **** Build of configuration Debug for project 13_OutputCompare ****
+make -j8 all 
+arm-none-eabi-gcc -o "13_OutputCompare.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Windows\Desktop\STM32\13_OutputCompare\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_OutputCompare.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_OutputCompare.elf
+ 
+arm-none-eabi-size   13_OutputCompare.elf 
+arm-none-eabi-objdump -h -S  13_OutputCompare.elf  > "13_OutputCompare.list"
+   text	   data	    bss	    dec	    hex	filename
+    808	      8	   1568	   2384	    950	13_OutputCompare.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_OutputCompare.list
+ 
+
+20:45:52 Build Finished. 0 errors, 0 warnings. (took 440ms)
+

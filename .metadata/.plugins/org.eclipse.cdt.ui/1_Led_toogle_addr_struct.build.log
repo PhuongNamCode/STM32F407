@@ -1,0 +1,21 @@
+20:45:52 **** Incremental Build of configuration Debug for project 1_Led_toogle_addr_struct ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:13:57: error: 'GPIOA_BASE' undeclared (first use in this function); did you mean 'GPIOD_BASE'?
+   13 | #define GPIOD_MODE_R        (*(volatile unsigned int *)(GPIOA_BASE+MODE_R_OFFSET))
+      |                                                         ^~~~~~~~~~
+../Src/main.c:26:8: note: in expansion of macro 'GPIOD_MODE_R'
+   26 |        GPIOD_MODE_R |=  (1U<<10);
+      |        ^~~~~~~~~~~~
+../Src/main.c:13:57: note: each undeclared identifier is reported only once for each function it appears in
+   13 | #define GPIOD_MODE_R        (*(volatile unsigned int *)(GPIOA_BASE+MODE_R_OFFSET))
+      |                                                         ^~~~~~~~~~
+../Src/main.c:26:8: note: in expansion of macro 'GPIOD_MODE_R'
+   26 |        GPIOD_MODE_R |=  (1U<<10);
+      |        ^~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+20:45:53 Build Failed. 2 errors, 0 warnings. (took 251ms)
+
